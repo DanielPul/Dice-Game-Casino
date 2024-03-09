@@ -1,0 +1,34 @@
+#Dice Game like a casino
+#This code simulates rolling two dice and calculates their total.
+#If the total is 7, the player wins; otherwise, they lose. The player can choose to play again or exit the game.
+
+#Have Fun - Daniel Pulido 
+
+import random
+
+def roll_dice():
+    """Simulates rolling a pair of dice."""
+    return random.randint(1, 6), random.randint(1, 6)
+
+def play_game():
+    """Main function to play the dice game."""
+    print("Welcome to the Dice Game!")
+
+    while True:
+        input("Press Enter to roll the dice...")
+        dice1, dice2 = roll_dice()
+        total = dice1 + dice2
+        print(f"You rolled {dice1} and {dice2}, totaling {total}.")
+
+        if total == 7:
+            print("You win!")
+        else:
+            print("You lose!")
+
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != 'yes':
+            print("Thanks for playing!")
+            break
+
+if __name__ == "__main__":
+    play_game()
